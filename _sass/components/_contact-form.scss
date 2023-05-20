@@ -1,0 +1,29 @@
+.modal-container { @include flexbox(); @include align-items(); @include justify-content(); position: fixed; width: 100%; height: 100%; bottom: 0; right: 0; background: rgba(0,0,0,.7); opacity: 0; pointer-events: none; z-index: 9999;
+    .modal { @include flexbox(); @include flex-flow(column wrap); width: 100%; max-width: 450px; margin: 0 20px; background: var(--grey-fa); border-radius: 5px; 
+        &.zoomIn { animation-name: zoomIn; animation-duration: .4s; animation-fill-mode: both; }
+        &.zoomOut { animation-name: zoomOut; animation-duration: .4s; animation-fill-mode: both; }
+
+        .modal-header { @include flexbox(); @include align-items(); @include justify-content(space-between); background: var(--main-color); padding: 18px 20px; border-radius: 5px 5px 0 0; font-family: 'PT Sans', sans-serif; font-size: 20px; font-weight: 700; color: var(--grey-fc);
+            svg { width: 16px; height: 16px; @include transition(all .1s ease); fill: currentColor; opacity: .5; cursor: pointer; @include transition(opacity .15s ease);
+                &:hover { opacity: 1; }
+            }
+        }
+        .modal-body { padding: 20px;
+            .form-message { display: none; margin-top: 0; text-align: center; padding: 10px 15px;
+                &.success { display: block; background: var(--form-success-bg); color: var(--form-success-text); }
+                &.error { display: block; background: var(--form-error-bg); color: var(--form-error-text); }
+            }
+            form { @include flexbox(); @include align-items(); @include flex-flow(column wrap); gap: 10px; 
+                label { display: block; width: 100%; }
+                .input, .textarea { width: 100%; height: 40px; padding: 10px; background: transparent; border: 1px solid var(--grey-ddd); border-radius: 5px; font-family: 'PT Sans', sans-serif; font-size: 16px; color: var(--grey-555); @include placeholder() { color: var(--grey-ccc); font-family: 'PT Sans', serif; font-size: 16px; } outline: none; }
+                .textarea { height: auto; min-height: 200px; }
+                .button { display: inline-block; background: var(--main-color); padding: 14px 30px; text-transform: uppercase; color: var(--grey-fc); border-radius: 5px; font-family: 'PT Sans', sans-serif; font-size: 14px; font-weight: 700; border: none; cursor: pointer; @include transition(background .1s ease);
+                    &:hover { background: var(--main-color-hover); }
+                    &:active, &:focus { outline: none; }
+                }
+            }
+        }
+    }
+    &.fadeIn { pointer-events: auto; animation-name: fadeIn; animation-duration: .4s; animation-fill-mode: both; }
+    &.fadeOut { animation-name: fadeOut; animation-duration: .4s; animation-fill-mode: both; }
+}

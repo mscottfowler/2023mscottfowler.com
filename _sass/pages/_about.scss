@@ -1,0 +1,22 @@
+.page-about {
+    .profile { float: right; margin: 20px 20px 20px 50px;
+        img { display: block; max-width: 100%; height: auto; }
+        ul { @include flexbox(); @include flex-flow(row wrap); list-style: none; margin: 20px 0 0; padding: 0; border-right: 1px solid var(--grey-ddd); border-bottom: 1px solid var(--grey-ddd);
+            li { flex: 1;
+                a { @include flexbox(); @include align-items(); @include justify-content(); padding: 15px; border-left: 1px solid var(--grey-ddd); border-top: 1px solid var(--grey-ddd); @include transition(background .15s ease); color: var(--grey-aaa);
+                    &:hover { background: var(--main-color);
+                        svg { fill: var(--grey-fc); }
+                    }
+                    svg { fill: currentColor; }
+                }
+            }
+        }
+    }
+
+    h1 { font-size: 48px; line-height: 52px; color: var(--grey-222); margin: 0 0 30px; }
+    .intro-paragraph { font-size: 20px; line-height: 32px; color: var(--grey-222); }
+}
+
+@media screen and (max-width: 640px) {
+    .page-about .profile { @include flexbox(); @include align-items(); @include flex-flow(column nowrap); float: none; margin: 0 0 30px; }
+}

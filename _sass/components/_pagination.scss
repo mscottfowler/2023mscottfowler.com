@@ -1,0 +1,6 @@
+.pagination { display: grid; grid-template-columns: 100px 1fr 100px; margin: 50px 0 0; font-size: 16px;
+    .previous, .next { text-decoration: none; color: var(--grey-555);
+        &:hover { text-decoration: underline; }
+    }
+    .page_number { text-align: center; color: var(--grey-ccc); }
+}

@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<h1 class="post-lists-title">Posts From Category: <span>{{page.category}}</span></h1>
+
+<section class="post-list"> 
+    {% for post in site.categories[page.category] %}
+        {% include components/post.html %}
+    {% endfor %}
+</section>

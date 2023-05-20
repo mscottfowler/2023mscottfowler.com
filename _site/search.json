@@ -1,0 +1,35 @@
+[
+  
+    {
+      "title"    : "IxDF NWA May 2023 Roundup",
+      "category" : "",
+      "tags"     : "UXDesign, Networking, NWArkansas",
+      "url"      : "http://localhost:4000/ixdf/2023/05/12/ixdf-may-roundup/",
+      "date"     : "2023-05-12 00:00:00 -0500"
+    } ,
+  
+    {
+      "title"    : "Spectra May 2023 Meet-up",
+      "category" : "",
+      "tags"     : "ArtMinistry, NWArkansas, FellowshipBibleChurch",
+      "url"      : "http://localhost:4000/spectra/2023/04/27/spectra-may-meetup/",
+      "date"     : "2023-04-27 00:00:00 -0500"
+    } ,
+  
+    {
+      "title"    : "IxDF May 2023 Meet-up",
+      "category" : "",
+      "tags"     : "UXDesign, Networking, NWArkansas",
+      "url"      : "http://localhost:4000/ixdf/2023/04/19/ixdf-may-meetup/",
+      "date"     : "2023-04-19 00:00:00 -0500"
+    } ,
+  
+    {
+      "title"    : "IxDF NWA April 2023 Round-up",
+      "category" : "",
+      "tags"     : "UXDesign, Networking, NWArkansas",
+      "url"      : "http://localhost:4000/ixdf/2023/04/17/ixdf-meetup/",
+      "date"     : "2023-04-17 00:00:00 -0500"
+    } 
+  
+]

@@ -1,0 +1,19 @@
+<!-- <nav class="site-navigation" role="navigation">
+    <a href="{{'/' | absolute_url}}" {% if page.url == "/" %}class="active"{% endif %}>Blog</a>
+    {% if site.pages %}
+        {% assign pages = site.pages | sort: 'order' %}
+        {% for p in pages | sort: 'title' %}
+            {% if p.layout == 'page' and p.showInMenu %}
+                <a href="{{p.url | absolute_url}}" {% if p.url == page.url %}class="active"{% endif %}>{{p.title}}</a>
+            {% elsif p.showInMenu and p.customPage %}
+                <a href="{{p.url | absolute_url}}" {% if p.url == page.url %}class="active"{% endif %}>{{p.title}}</a>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    {% if site.useExternalContactForm %}
+        <span class="open-contact">Contact</a>
+    {% else %}
+        <a href="mailto:{{site.email}}">Contact</a>
+    {% endif %}
+</nav> -->

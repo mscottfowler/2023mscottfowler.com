@@ -1,0 +1,54 @@
+ <!-- <header class="site-header">
+    <a class="site-header-wrapper" href="{{'/' | absolute_url}}">
+        <span class="site-logo">
+            <img src={{"/assets/images/logo.svg" | absolute_url}} width="56" height="56" alt="Logo" />
+        </span>
+        <span class="site-subtitle">Est. {{site.time | date: '%Y'}}</span>
+        <span class="site-title">{{site.title}}</span>
+    </a>
+</header> -->
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=643d9701fbde0e0019eae7b9&product=sticky-share-buttons&source=platform" async="async"></script>
+<header>
+   <div id="top" class="container">
+      <div class="row">
+        <nav class="col-md-12">
+          <div class="col-md-4 col-sm-4">
+            <p class="logo-header"><a data-hover="Scott Fowler" href="https://mscottfowler.com/">Scott Fowler</a></p>
+            <p class="logo-social">acrylic &amp; watercolor artist 
+              <span class="logo-social">
+              <a href="https://www.linkedin.com/in/mscottfowler/" title="LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-lg"></i></a>
+              <a href="https://www.instagram.com/mscottfowler/" title="Instagram" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
+            </span>
+          </p>  
+          </div>
+          <div class="mini-menu"><i class="fa fa-bars"></i></div>
+          <ul class="col-md-8 col-sm-8 menu">
+            {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}
+    {% for p in navigation_pages %}
+      {% if p.navigation_weight %}
+        <li>
+          <a href="{{ p.url }}" {% if p.url == page.url %}class="active"{% endif %}>
+            {{ p.title }}
+          </a>
+        </li>
+        
+      {% endif %}
+    {% endfor %}
+    <li><a href="{{'/' | absolute_url}}" {% if page.url == "/" %}class="active"{% endif %}>Blog</a></li>
+    <li>{% if site.useExternalContactForm %}
+      <span class="open-contact">Contact</span>
+  {% else %}
+      <a href="mailto:{{site.email}}">Contact</a>
+  {% endif %}</li>
+
+            <!-- <li class="cl-effect-11 current"><a data-hover="WORK" href="/work">Work</a></li>
+              <li class="cl-effect-11"><a data-hover="BLOG" href="index.html">Blog</a></li>
+            <li class="cl-effect-11"><a data-hover="ABOUT" href="/about">About</a></li>
+            <li class="cl-effect-11"><a data-hover="CONTACT" href="mailto:mscottfowler@icloud.com">Contact</a></li>
+             -->
+          </ul>        
+        </nav>
+      </div>
+      </div>
+    </header>
+  

@@ -1,0 +1,181 @@
+// .site-header { display: grid; @include justify-content(); padding: 0 20px; text-align: center; 
+//     .site-header-wrapper { position: relative; overflow: hidden; background: var(--main-color); padding: 10px 25px 20px 25px; border-radius: 0 0 5px 5px; text-decoration: none; @include transition(background .2s ease);
+//         &:before { position: absolute; top: 0; left: -150%; content: ""; width: 50%; height: 100%;
+//             background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+//             background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+//             @include skew(-45deg, 0);
+//         }
+//         &:hover { background: var(--main-color-hover);
+//             &:before { animation: headerShine .35s; }
+//         }
+//         .site-logo { display: block; margin: 0 0 10px;
+//             img { display: block; }
+//         }
+//         .site-subtitle { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 11px; line-height: 14px; color: var(--grey-fc); }
+//         .site-title { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 26px; line-height: 28px; color: var(--grey-fc); }
+//     }
+// }
+
+// @media screen and (max-width: 800px) {
+//     .site-header { position: fixed; left: 0; top: 0; width: 100%; z-index: 9; background: var(--body-bg); box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+//         .site-header-wrapper { @include flexbox(); @include align-items(); @include justify-content(); @include flex-flow(row wrap); gap: 0 15px; border-radius: 0; padding: 20px; background: transparent;
+//             &:hover { background: transparent; }
+//             .site-logo, .site-subtitle { display: none; }
+//             .site-title { font-size: 32px; line-height: 36px; color: var(--main-color); }
+//         }
+//     }
+// }
+
+html, body {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Raleway',sans-serif;
+	font-weight: 300;
+	font-size: 13px;
+	line-height:22px;
+	color: #232323;
+	background-color: #fff;
+}
+
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 0px;
+    padding: 0;
+}
+h1 {
+	font-weight: 300;
+	font-size: 20px;
+	text-transform: uppercase;
+	//text-align: center;
+	margin: 0px 0 50px 0;
+	letter-spacing: 4px;
+}
+h2 {
+	font-weight: 700;
+	font-size: 13px;
+	text-transform: uppercase;
+	text-align: left;
+	border-bottom: 1px solid #212121;
+	margin-bottom: 33px;
+    padding-bottom: 7px;
+    letter-spacing: 1px;
+}
+
+p {
+	letter-spacing: 1px;
+	font-size: 1.4rem;
+}
+img {
+    max-width: 100%;
+}
+
+/***LOGO***/
+.content-logo {
+	width: 100%;
+	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 40px;
+}
+.logo-header {
+	font-size: 32px;
+	margin-bottom: 5px;
+	margin-top: 15px;
+a {
+	text-decoration:none;
+	color:#7a7a7a;
+}
+}
+.logo-social {
+	color: #7a7a7a;
+	font-size:1.75rem;
+	text-decoration: none;
+}
+
+/***MENU***/
+header {
+	box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+	width: 100%;
+	z-index: 999;
+	background: #fff;
+}
+header nav .menu  {
+	text-align: right;
+}
+header nav .menu li{
+	display: inline-block;
+	list-style-type: none;
+	padding: 25px 0 0 30px;
+    text-transform: uppercase;
+}
+header nav .menu li a{
+	color: #7a7a7a;
+	text-decoration: none;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+.menu .cl-effect-11 a::before {
+	padding: 7px 0;
+}
+.menu a.active { color: #333; border-bottom: 1px solid #333;}
+
+/*****Mini Menu*****/
+
+.mini-menu {
+	text-align: center;
+	font-size: 20px;
+	margin-bottom: 20px;
+	display: none;
+}
+
+
+/***Structure***/
+
+.box-content {
+	width: 100%;
+	float: left;
+	padding: 100px 0 100px 0;
+}
+.box-content.about {
+	padding: 200px 0 100px 0;
+}
+.box-text {
+	border: 1px solid #dbdbdb;
+	padding: 28px 23px 31px;
+	position: relative;
+    display: block;
+    background-color: #fff;
+    height: 506px;
+}
+.box-img {
+	border: 1px solid #dbdbdb;
+	padding: 28px 23px 31px;
+	position: relative;
+    display: block;
+    background-color: #fff;
+}
+#section1 i{
+	margin-right: 10px;
+}
+
+.overlay {
+	background:url(../images/bg_p.png) repeat top left;    
+	padding: 100px 0;
+}
+.parallax1 {
+	background:url(../images/artwork-bg.jpg) no-repeat center center fixed;    
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    float: left;
+    
+}
+
+.prod-line {
+	padding-bottom: 30px;
+}

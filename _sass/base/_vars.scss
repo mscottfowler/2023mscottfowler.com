@@ -1,0 +1,42 @@
+:root, [data-theme="light"] {
+    --body-bg: #fafafa;
+
+    --main-color: #0288cc;
+    --main-color-hover: #005f8d;
+
+    --form-success-bg: #d0f1cc;
+    --form-success-text: #597755;
+    --form-error-bg: #f1cccc;
+    --form-error-text: #775555;
+
+    --grey-222: #222;
+    --grey-555: #555;
+    --grey-9a: #9a9a9a;
+    --grey-aaa: #aaa;
+    --grey-ccc: #ccc;
+    --grey-ddd: #ddd;
+    --grey-eee: #eee;
+    --grey-fc:  #fcfcfc;
+    --grey-fa:  #fafafa;
+}
+
+[data-theme="dark"] {
+    --body-bg: #050505;
+
+    --main-color: #639f93;
+    --main-color-hover: #5b9287;
+
+    --form-success-bg: #d0f1cc;
+    --form-success-text: #597755;
+    --form-error-bg: #f1cccc;
+    --form-error-text: #775555;
+
+    --grey-222: #ddd;
+    --grey-555: #ddd;
+    --grey-aaa: #777;
+    --grey-ccc: #666;
+    --grey-ddd: #666;
+    --grey-eee: #222;
+    --grey-fc:  #fcfcfc;
+    --grey-fa:  #151515;
+}

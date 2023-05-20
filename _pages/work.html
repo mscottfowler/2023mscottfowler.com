@@ -1,0 +1,23 @@
+---
+layout: default
+title: Work
+order: 3
+customPage: true
+navigation_weight: 3
+permalink: /work/
+---
+
+<section class="page-work">
+    <h1 class="text-center">{{ layout.title }}</h1>
+
+    <div class="projects-list">
+        {% assign sortedProjects = site.projects | sort: 'creationDate' | reverse %}
+        {% for project in sortedProjects %}
+            <div class="project">
+                <a class="project-cover" href="{{project.url | absolute_url}}"><img src="{{project.cover | absolute_url}}" alt="{{project.name}}" width="600" height="450" /></a>
+                <h2 class="project-title"><a href="{{project.url | absolute_url}}">{{project.name}}</a></h2>
+                <span class="project-category">{{project.category}}</span>
+            </div>
+        {% endfor %}
+    </ul>
+</section>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Henry - Simple, yet powerful Jekyll theme</title>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Sans+Narrow:400,700&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css' />
+<style type="text/css">
+	* { box-sizing: border-box; -moz-box-sizing: border-box; }
+	body { margin: 0; padding: 0 10px; min-width: 320px; background: #eee; }
+	.page { max-width: 700px; margin: 50px auto; padding: 40px; background: #fff; font: 15px/24px 'PT Sans', Arial, Tahoma, sans-serif; box-shadow: 3px 3px 3px rgba(0,0,0, 0.05); color: #666; }
+	.page h1 { color: #444; line-height: normal; margin: 0 0 10px; text-align: center; font: 700 40px/48px 'PT Sans Narrow', Arial, Tahoma, sans-serif; }
+	.page h1 + p { font-size: 20px; color: #999; font-style: italic; margin: 0 0 10px; text-align: center;  }
+	.page h1 + p + span { display: block; font-size: 14px; text-align: center; margin: 0 0 20px; padding: 0 0 30px; border-bottom: 1px solid #eee; }
+	.page h2 { font-size: 22px; color: #444; line-height: normal; margin: 40px 0 20px; padding: 30px 0 0; border-top: 1px solid #eee; }
+	.page h2:first-of-type { border: none; margin-top: 0; padding-top: 10px; }
+	.page strong { color: #444; }
+	.page ol li, .page ul li { margin: 6px 0 0; }
+	.page ol > li:first-of-type, .page ul > li:first-of-type { margin: 0; }
+	.page a { color: #dc5166; border-bottom: 1px solid; text-decoration: none; }
+	.page a:hover { color: #b7374b; border-bottom: none; }
+	.page pre { display: block; border: 1px solid #e3edf3; background: #F7FAFB; overflow: visible; overflow-y: hidden; padding: 0 8px; font-size: 13px; line-height: 20px; font-family: monospace, sans-serif; white-space: pre; }
+	.page code { padding: 1px 5px; font-size: 13px; line-height: 20px; border: 1px solid #e3edf3; background: #F7FAFB; font-family: monospace, sans-serif; white-space: pre; }
+</style>
+</head>
+<body>
+	<div class="page">
+		<h1>Henry</h1>
+		<p>Simple, yet powerful Jekyll theme.</p>
+		
+
+		<h2>Installation</h2>
+		<p>I assume that you have already downloaded and installed Ruby. Here's what you need to do next:</p>
+		<ol>
+			<li>Run <code>gem install jekyll bundler</code>.</li>
+			<li>Extract the theme to a desired folder.</li>
+			<li>o into that folder by executing <code>cd name-of-the-folder</code>.</li>
+			<li>Run <code>bundle install</code>.</li>
+			<li>If you want to access and customize the theme, use <code>bundle exec jekyll serve</code>. This way it will be accessible on <code>http://localhost:4000/</code> or <code>http://127.0.0.1:4000/</code>. Also, after every change you make the theme will rebuild itself automatically.</li>
+			<li>Run <code>bundle exec jekyll build</code> and upload the content of the compiled <code>_site</code> folder on your host server.</li>
+		</ol>
+
+
+		<h2>Configuration</h2>
+		<p>All configuration options are in the <code>_config.yml</code> file. Let's take a look of the important ones.</p>
+		<p><strong>General</strong></p>
+		<ul>
+			<li><strong>title</strong>: Site name.</li>
+			<li><strong>description</strong>: Site description.</li>
+		</ul>
+        <p><strong>Paths</strong></p>
+        <p>These options are pretty important, so take a closer look. If you experience any problems with your paths you should check here.</p>
+        <ul>
+            <li><strong>url</strong>: A lot of people have problems when they try to setup their paths. That's why I've decided to keep things as simple as possible. So, usually you'll have to paste here your domain <code>https://mysite.com</code> and then in the baseurl you paste your subdomain (if there is one). The theme is configured to use absolute paths, so you'll have to paste the whole path here — domain + subdomain. For example, if your website is in the root folder, write down <code>https://mysite.com</code>, if there is a subfolder — <code>https://mysite.com/subfolder</code>. In this case you don't need the baseurl anymore.</li>
+			<li><strong>baseurl</strong>: No longer needed due theme configuration. I left it just in case.</li>
+		</ul>
+        <p><strong>Options</strong></p>
+        <ul>
+            <li><strong>darkMode</strong>: Enable/disable dark theme for the theme. If enabled you'll see an icon in the upper right corner.</li>
+			<li><strong>showTags</strong>: Enable/disable visibility of post's tags.</li>
+			<li><strong>showCategories</strong>: Enable/disable visibility of post's categories.</li>
+			<li><strong>showSearch</strong>: Enable/disable visibility of global site search.</li>
+			<li><strong>showSharePost</strong>: Enable/disable visibility of post's share options.</li>
+			<li><strong>showFavIcon</strong>: Enable/disable visibility of favicon.</li>
+			<li><strong>showComments</strong>: Enable/disable visibility of post's comments.</li>
+			<li><strong>showCookieBanner</strong>: Enable/disable visibility of the cookie banner. This theme supports Google Analytics (GA), so there have to be some kind of user notification. If you don't use GA or other tracking service, you should disable it. Keep in mind that the banner is pretty basic, so in some cases you may need to customize it or entirely replace it with another third-party cookie service.</li>
+			<li><strong>useExternalContactForm</strong>: Enable/disable usage of <a href="https://formspree.io/" target="_blank">Formspree</a> as default contact form. If this option is disabled, when you click <b>Contact</b> link in the main menu you'll be redirected directly to your default mail client. If enabled, a modal box will pop up and you'll be introduced to a more user-friendly contact form.</li>
+			<li><strong>useAnalytics</strong>: Enable/disable usage of Google Analytics.</li>
+		</ul>
+        <p><strong>Third Party / Social</strong></p>
+        <ul>
+            <li><strong>facebook</strong>: Link to your facebook page.</li>
+			<li><strong>twitter</strong>: Link to your twitter page.</li>
+			<li><strong>instagram</strong>: Link to your instagram page.</li>
+			<li><strong>email</strong>: Your email address.</li>
+			<li><strong>formspree</strong>: Link to your <a href="https://formspree.io/" target="_blank">Formspree</a> form. If you use Formspree, generate form ID and paste it here. Works only if you activated <code>useExternalContactForm</code> option in the previos section.</li>
+			<li><strong>googleAnalyticsTrackingCode</strong>: Add your Google Analytics Tracking ID. Example ID: <i>UA-XXXXXXX-2</i>.</li>
+			<li><strong>disqusID</strong>: Add your website shortname from Disqus. Keep in mind that by default Disqus comments are not configured. If you use this make sure <code>showComments</code> option is set to <b>true</b>.</li>
+			<li><strong>twitterHandle</strong>: Add your Twitter handle.</li>
+		</ul>
+        <p><strong>Permalinks</strong></p>
+        <p>There is a default structure of your links. If you want a different one, please check <a href="https://jekyllrb.com/docs/permalinks/" target="_blank">Jekyll documentation</a>.</p>
+        <p><strong>Pagination</strong></p>
+        <ul>
+            <li><strong>paginate</strong>: Number of posts per page.</li>
+			<li><strong>paginate_path</strong>: The default path is <code>/blog/page:num/</code>, so for example if you go to the second page you'll see something like this <code>http://mysite.com/blog/page2/</code>.</li>
+		</ul>
+		<p><strong>Important Note:</strong> Due to theme's compatibility with GitHub Pages, pagination is only supported on the default posts/blog page — <b>Blog</b>. When you list categories or tags, there is no pagination.</p>
+        <p><strong>Includes</strong></p>
+        <ul>
+            <li><strong>include</strong>: Force the inclusion of the <code>pages</code> directory.</li>
+		</ul>
+        <p><strong>Post Separator</strong></p>
+        <ul>
+            <li><strong>excerpt_separator</strong>: By default when you're writing a post, you should add <code>&lt;!--more--&gt;</code> to define the end of the excerpt. If you remove this option your excerpt will show with the default settings and you'll not have control over the content. If you want to keep the custom separator (I strongly suggest) you can leave it as is or change the <code>&lt;!--more--&gt;</code> tag as well.</li>
+		</ul>
+        <p><strong>Assets Settings</strong></p>
+        <ul>
+            <li><strong>sass_dir</strong>: Choose the path to your SCSS files.</li>
+            <li><strong>style</strong>: Choose the compression method for the final CSS file.</li>
+		</ul>
+        <p>If you need extra help, just check out the <a href="https://jekyllrb.com/docs/home/" target="_blank">official Jekyll documentation</a>.</p>
+
+
+        <h2>How To Add a Post</h2>
+        <p>All you need to do is to add a file to your <code>_posts</code> directory with the following format: <code>YEAR-MONTH-DAY-title.MARKUP</code>. Where YEAR is a four-digit number, MONTH and DAY are both two-digit numbers, and MARKUP is the file extension representing the format used in the file. You can overwrite these in the post's front matter. Take for example the current file. The title is different from the one in the filename.</p>
+        <p>In the beginning of the every post you have a so called <a href="https://jekyllrb.com/docs/frontmatter/" target="_blank">front matter</a> block which contains some data about the post. Here is the short description of the options.</p>
+        <ul>
+            <li><strong>layout</strong>: Post's layout. This setting is configured by default. Use only if you want a custom post layout.</li>
+            <li><strong>author</strong>: Post's author. You can see all authors in the <code>authors.yml</code> file in the <code>_data</code> folder.</li>
+            <li><strong>title</strong>: Post's title. Overwrites the one from the filename.</li>
+            <li><strong>date</strong>: Post's date. Overwrites the one from the filename.</li>
+            <li><strong>categories</strong>: This post can be included under one or many categories. List them here. Keep in mind that you have to create a file for every new category. Check out the guide for creating a new category below.</li>
+            <li><strong>tags</strong>: List the specific post tags. Keep in mind that you have to create a file for every new tag. Check out the guide for creating a new category below.</li>
+            <li><strong>description</strong>: Meta description used for better SEO.</li>
+            <li><strong>comments</strong>: By default they are always <code>true</code>, but if you want to turn them off for a specific post just set this to <code>false</code>.</li>
+		</ul>
+        <p>You can add more or different data in the front matter by yourself. You'll just have to learn how to display it :).</p>
+
+
+        <h2>How To Add a Page</h2>
+        <p>Adding page is even simpler than adding post. Go go <code>_pages</code> folder and add a file with the following format: <code>page-title.FORMAT</code>. FORMAT is the file extension and it can be <code>.md</code>, <code>.markdown</code> or <code>.html</code>. Pages are also using front matter to add information to your page. Just like posts, pages have default front matter.</p>
+        <ul>
+            <li><strong>layout</strong>: The page's layout. Unlike posts, setting the layout for the page is required.</li>
+            <li><strong>title</strong>: Page's title.</li>
+            <li><strong>permalink</strong>: This is important. If you do not enter the permalink, your URL will be something like this <code>http://example.com/_pages/about</code>. Enter the permalink and get rid of <code>/_pages/</code> part. Do not forget the trailing slash!</li>
+            <li><strong>showInMenu</strong>: By default every page is shown in the main menu. Set it to <code>false</code> if you don't want it to be visible there.</li>
+		</ul>
+        <p>There are two "special" or in other words hardcoded pages that are custom for this theme - <b>About Page</b> and <b>Work Page</b>. They have some additional front matter that I'd like to share with you.</p>
+        <p>Special pages do not use <code>page</code> layout so they'll need another property to show up in the main menu.</p>
+        <ul>
+            <li><strong>customPage</strong>: If you want a special page to be visible in the menu you'll have to keep this option set to <code>true</code> along with <code>showInMenu</code>. If false or removed the page will not be visible.</li>
+            <li><strong>order</strong>: Custom pages can be ordered. Just place a number here.</li>
+		</ul>
+
+
+        <h2>How To Add a New Project</h2>
+        <p>Go to the <code>_projects</code> folder and create a new file. There is a little bit of front matter that you'll have to fill:</p>
+<pre>
+---
+name: App
+category: App Design
+creationDate: 2021-02-01
+client: Tesla
+role: App Deisgner
+website: https://project.website.com
+cover: http://path.to.cover.image.jpg
+gallery:
+- http://path.to.image1.jpg
+- http://path.to.image2.jpg
+---
+</pre>
+        <p>I think all of the properties are self-explanatory. Keep in mind that demo projects are using <code>webp</code> format for the images and they are hosted on my server to keep the size of the theme as low as possible. If you keep your images in the <code>images</code> folder (as you should be) the path is <code>/assets/images/image.FORMAT</code>.</p>
+
+
+        <h2>How To Add a New Category</h2>
+        <p>I wanted to keep this theme as light and clean as possible, so the use of external plugins was not an option. Besides, I also wanted to be GitHub Pages compatible.</p>
+        <p>Adding a category is pretty simple, but some empty file creation is needed. Categories and tags are collections (just like projects) and every collection item require a dedicated file. Here are the steps of new category creation.</p>
+        <ol>
+            <li>Go to <code>_category</code> folder and create new file. For example: <code>documentation.html</code>.</li>
+            <li>Open that file and add <code>category</code> property in the front matter. <i>Note: Filename and category must be exactly the same.</i></li>
+        </ol>
+<pre>
+---
+category: documentation
+---       
+</pre>
+        <ol start="3">
+            <li><i>Optional</i>: Go to a post and add category name to the list.</li>
+        </ol>
+
+
+        <h2>How To Add a New Tag</h2>
+        <p>I wanted to keep this theme as light and clean as possible, so the use of external plugins was not an option. Besides, I also wanted to be GitHub Pages compatible.</p>
+        <p>Adding a tag is pretty simple, but some file creation is needed. Categories and tags are collections (just like projects) and every collection item require a dedicated file. Here are the steps of new tag creation.</p>
+        <ol>
+            <li>Go to <code>_tag</code> folder and create new file. For example: <code>jekyll.html</code>.</li>
+            <li>Open that file and add <code>tag</code> property in the front matter. <i>Note: Filename and tag must be exactly the same.</i></li>
+        </ol>
+<pre>
+---
+tag: jekyll
+---    
+</pre>
+        <ol start="3">
+            <li><i>Optional</i>: Go to a post and add tag name to the list.</li>
+        </ol>
+
+
+        <h2>How To Add a New Author</h2>
+        <ol>
+            <li>Go to <code>_data</code> folder and open <code>authors.yml</code> file. Take a look at the examples and add another author.</li>
+            <li>Then go to a specific post and add author's name in the front matter.</li>
+        </ol>
+        <pre>
+henry:
+    name: Henry Dawson
+    title: Ordinary Gentleman
+    avatar: /assets/images/user1.webp
+</pre>
+        <p>Take a look at the example above. <code>henry</code> is the name that you put in the post's front matter and the <code>name</code> is just a display name that is used thereafter.</p>
+
+
+        <h2>Enable & Configure Disqus Comments</h2>
+        <p>To enable and configure comments you must do the following:</p>
+        <ol>
+            <li>Go to <code>_config.yml</code> and under <b>Options</b> enable <code>showComments</code>.</li>
+            <li>Go to <code>_includes/components/comments.html</code> file and edit your <code>PAGE_URL</code> and <code>PAGE_IDENTIFIER</code> variables. <a href="https://disqus.com/admin/install/platforms/universalcode" target="_blank">Read about Disqus</a>.</li>
+        </ol>
+
+
+        <h2>Formspree (Contact Form)</h2>
+        <p>Go to <a href="https://formspree.io/" target="_blank">Formspree</a> and register. Create a new project and then a form. Paste form's endpoint to the <code>_config.yml</code> file, section <b>Third Party / Social</b>. Voilà!</p>
+
+
+        <h2>Site Search</h2>
+        <p>This theme use a third-party search library that is completely JavaScript. In the root folder you'll find the <code>search.json</code> file which is basically the search result's config. If you go to <code>_includes/scripts.html</code> you can also configure the library itself. You can change the settings but make sure you know what you are doing.</p>
+
+
+        <h2>GitHub Pages</h2>
+        <p>Here is the one of many ways to upload the theme to GitHub Pages.</p>
+        <ol>
+            <li>Go to <a href="https://github.com/" target="_blank">GitHub</a> and create a new repository. It can be private or public for now, just don't forget to make it public when you finish editing.</li>
+            <li>Clone your repo and create a new branch called <code>gh-pages</code>.</li>
+            <li>Go to your Henry theme and open <code>_config.yml</code> file. After <code>url</code> in the <b>Paths</b> section write down your full URL. Example: <code>https://githubusername.github.io/repositoryname</code>. Build using <code>bundle exec jekyll build</code>.</li>
+            <li>Copy the contents of <code>_site</code> folder to the newly created GitHub Pages repo.</li>
+            <li>Then define user by executing two commands: <code>git config user.email "Your Email"</code> and <code>git config user.name "Your Name"</code>.</li>
+            <li>Use <code>git add .</code> to stage all files, then type <code>git commit -m "Initial commit"</code> to make your first commit and that followed by <code>git push -u origin gh-pages</code> to push the changes.</li>
+            <li>Open <code>https://githubusername.github.io/repositoryname</code> (remember, you'll have to make it public). If you want to push new changes to the website, repeat step 6 and in the end just use <code>git push</code>.</li>
+        </ol>
+
+        <p>That's it! Do not hesitate to ask if you have any questions. Happy blogging!</p>
+	</div>
+</body>
+</html>

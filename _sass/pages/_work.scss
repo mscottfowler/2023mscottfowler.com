@@ -1,0 +1,78 @@
+.page-work {
+    .projects-list { display: grid; gap: 40px 20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        .project { text-align: center;
+            .project-cover { display: block; margin: 0 0 15px; @include transition(transform .2s ease);
+                &:hover { @include scale(1.08); }
+                img { display: block; width: 100%; height: auto; }
+            }
+            .project-title { font-size: 18px; margin: 0 0 5px;
+                a { color: var(--grey-222); text-decoration: none;
+                    &:hover { text-decoration: underline; }
+                }
+            }
+            .project-category { display: block; font-family: 'PT Sans', sans-serif; font-size: 12px; line-height: 16px; color: var(--grey-aaa); text-transform: uppercase; letter-spacing: .1em; }
+        }
+    }
+}
+
+.page-project { display: grid; gap: 50px; grid-template-columns: 7fr 3fr; grid-template-rows: auto; grid-template-areas: "carousel carousel" "content sidebar";
+    .section-title { display: block; font-family: 'PT Sans', sans-serif; font-size: 13px; color: var(--grey-222); text-transform: uppercase; letter-spacing: .1em; }
+    .project-gallery { grid-area: carousel; position: relative; overflow: hidden;
+        .slides { @include flexbox(); @include transition(transform .5s ease);
+            .slide { position: relative; width: 100%; @include flexbox(); @include flex(1, 0, auto); padding: 50% 0 0;
+                figure a { display: block;
+                    img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+                }
+            }
+        }
+        .gallery-nav { display: grid; gap: 0 5px; grid-auto-flow: column; position: absolute; bottom: 20px; right: 20px; z-index: 1;
+            label { width: 12px; height: 12px; background: transparent; border: 2px solid var(--grey-222); display: block; border-radius: 50%; @include transition(background .1s ease); cursor: pointer;
+                &.active, &:hover { background: var(--grey-222); }
+            }
+        }
+    }
+    .project-overview { grid-area: content;
+        .project-title { margin: 0 0 20px; font-size: 40px; line-height: 44px; color: var(--grey-222); }
+        a { color: var(--main-color);
+            &:hover { text-decoration: none; }
+        }
+        abbr { border-bottom: 1px dotted var(--grey-555); text-decoration: none; cursor: help; }
+        code, kbd, pre { margin: 0; font-family: monospace; word-wrap: break-word; word-break: break-word; white-space: pre-wrap; }
+        address, cite, var { font-style: italic; }
+        blockquote { margin: 40px 0; padding: 0 0 0 20px; border-left: 3px solid var(--grey-555); color: var(--grey-222); font-weight: 700; }
+        em, strong { color: var(--grey-222); }
+
+        p { margin: 15px 0;
+            & > code { font-size: 14px; padding: 3px 6px; margin: 0 4px; background: var(--grey-fa); border: 1px solid var(--grey-ccc); }
+        }
+
+        img { display: block; max-width: 100%; height: auto; }
+
+        ul { list-style-type: disc; list-style-position: inside; }
+
+        ul, ol { margin: 15px 0; padding: 0 0 0 20px;
+            ul, ol { padding: 0 0 0 20px; }
+            li { margin: 5px 0;
+                & > code { font-size: 14px; padding: 3px 6px; margin: 0 4px; background: var(--grey-fa); border: 1px solid var(--grey-ccc); }
+            }
+        }
+    }
+    .project-meta { grid-area: sidebar;
+        & > div { position: sticky; top: 0; display: grid; gap: 30px; justify-items: start; align-items: start; align-content: start; font-size: 16px;
+            .button { display: inline-block; background: var(--main-color); padding: 10px 30px; text-transform: uppercase; color: var(--grey-fc); border-radius: 5px; font-family: 'PT Sans', sans-serif; font-size: 14px; font-weight: 700; border: none; cursor: pointer; @include transition(background .1s ease); text-decoration: none; text-align: center;
+                &:hover { background: var(--main-color-hover); }
+                &:active, &:focus { outline: none; }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .page-project { grid-template-areas: "carousel carousel" "content content" "sidebar sidebar"; grid-template-columns: 1fr 1fr;
+        .project-meta { 
+            & > div { position: static; @include flexbox(); @include flex-flow(row wrap);
+                & > div { @include flex(1, 0, auto); }
+            }
+        }
+    }
+}

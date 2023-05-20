@@ -1,0 +1,83 @@
+<article class="post" role="article">
+    {% if page.layout != 'post' %}
+        {% assign post = post %}
+    {% else %}
+        {% assign post = page %}
+    {% endif %}
+
+    {% assign author = site.data.authors[post.author] %}
+
+    <h2 class="post-title">
+        {% if page.layout != 'post' %}
+            <a href="{{post.url | absolute_url}}">{{post.title}}</a>
+        {% else %}
+            {{post.title}}
+        {% endif %}
+    </h2>
+    <div class="post-author">
+        {% if author %}
+            <img class="author-avatar" src="{{author.avatar | absolute_url}}" alt="{{author.name}}" width="50" height="50" />
+        {% else %}
+            {% assign author = site.data.authors['noavatar'] %}
+            <svg class="author-avatar" width="50" height="50"><use href={{"/assets/images/other-icons.svg#no-avatar" | absolute_url}}></use></svg>
+        {% endif %}
+        <div class="author-info">
+            <span class="author-name">{{author.name}}</span>
+            <span class="author-title">{{author.title}}</span>
+        </div>
+        <div class="post-meta">
+            <time class="post-date" datetime="{{post.date | date_to_xmlschema}}">{{post.date | date: "%-d %b, %Y"}}</time>
+            {% include partials/readingTimeCalculator.html %}
+
+            {% if site.showCategories and post.categories %}
+                <div class="post-categories">
+                    {% for category in post.categories %}
+                        {% capture categoryURL %}/category/{{category}}/{% endcapture %}
+                        <a href={{categoryURL | absolute_url}}>{{category}}</a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="post-content">
+        {% if page.layout != 'post' %}
+            {{post.excerpt}}
+        {% else %}
+            {{post.content | markdownify }}
+        {% endif %}
+
+        {% if page.layout != 'post' %}
+            {% if post.excerpt != post.content %}
+                <p><a href="{{post.url | absolute_url}}" class="read-more-button" role="button">Continue reading...</a></p>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <div class="post-footer">
+        {% if site.showTags and post.tags %}
+            <ul class="post-tags">
+                {% for tag in post.tags %}
+                    {% capture tagURL %}/tag/{{tag}}{% endcapture %}
+                    <li><a href="{{tagURL | absolute_url}}">#{{tag}}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if page.layout == 'post' and site.showSharePost %}
+            <div class="post-share">
+                <span>Share</span>
+           
+                <ul class="social-networks">
+                    <li><a href="https://facebook.com/sharer.php?u={{page.url | absolute_url}}" rel="nofollow" target="_blank"><svg width="16" height="16"><use href={{"/assets/images/social-icons.svg#facebook" | absolute_url}}></use></svg></a></li>
+                    <li><a href="http://twitter.com/share?url={{page.url | absolute_url | escape}}&text={{post.content | strip_html | strip | truncate: 130}}&via={{site.twitterHandle}}" rel="nofollow" target="_blank"><svg width="16" height="16"><use href={{"/assets/images/social-icons.svg#twitter" | absolute_url}}></use></svg></a></li>
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+
+    {% if page.layout == 'post' and post.comments and site.showComments %}
+        <aside class="post-comments" role="complementary">
+            {% include components/comments.html %}
+        <aside>
+    {% endif %}
+</article>

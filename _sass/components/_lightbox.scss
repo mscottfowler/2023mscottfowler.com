@@ -1,0 +1,25 @@
+.custom-lightbox { position: fixed; visibility: hidden; opacity: 0; @include transition(opacity .2s ease); @include flexbox(); top: 0; left: 0; bottom: 0; right: 0; background: rgba(0,0,0, .7); z-index: 9000;
+    &.active { visibility: visible; opacity: 1; }
+
+    .lightbox-content { position: relative; display: grid; grid-template-columns: 1fr 8fr 1fr; gap: 40px; @include align-items(); justify-items: center; width: 100%; @include no-select(); }
+    .prev-image, .next-image, .lightbox-close { cursor: pointer; opacity: .5; @include transition(opacity .1s ease); color: var(--grey-fa);
+        &:hover { opacity: .9; }
+        svg { width: 32px; height: 32px; fill: currentColor; }
+    }
+    .prev-image svg { @include rotate(180deg); }
+    .current-image {
+        img { width: 100%; max-width: 100%; height: auto; }
+    }
+
+    .lightbox-close { position: fixed; top: 30px; right: 30px; width: 24px; height: 24px; padding: 0; background: none; border: 0; outline: none; }
+}
+
+@media screen and (max-width: 960px) {
+    .custom-lightbox .lightbox-content { grid-template-columns: 1fr;
+        .prev-image, .next-image { position: absolute; opacity: .8;
+            svg { width: 40px; height: 40px; }
+        }
+        .prev-image { left: 20px; }
+        .next-image { right: 20px; }
+    }
+}

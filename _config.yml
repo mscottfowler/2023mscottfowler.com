@@ -1,0 +1,92 @@
+# General
+title: Scott Fowler
+description: 'Acrylic and Watercolor Artist'
+
+# Paths
+baseurl: ""
+url: ""
+
+# Options
+darkMode: true
+showTags: true
+showCategories: true
+showSearch: true
+showSharePost: true
+showFavIcon: true
+showComments: true
+showCookieBanner: false
+useExternalContactForm: true
+useAnalytics: true
+
+# Third Party / Social
+linkedin: 'https://www.linkedin.com/in/mscottfowler'
+instagram: 'https://instagram.com/mscottfowler'
+email: 'mscottfowler@icloud.com'
+formspree: https://formspree.io/f/xayzlgjj
+googleAnalyticsTrackingCode: UA-XXXXXXX-2
+disqusID: 'mscottfowler'
+twitterHandle: 'twitterHandle'
+
+# Collections
+collections:
+  projects:
+    output: true
+  category:
+    output: true
+  tag:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: "true"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      showInMenu: true
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "category"
+    values:
+      layout: "category"
+  - scope:
+      path: ""
+      type: "tag"
+    values:
+      layout: "tag"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Permalinks
+permalink: /:categories/:year/:month/:day/:title/
+
+# Pagination
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Includes
+include: ["_pages"]
+
+# Post Separator
+excerpt_separator: <!--more-->
+
+# Assets
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap

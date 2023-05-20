@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<section class="page-project">
+    <div class="project-gallery">
+        <div class="slides">
+            {% for picture in page.gallery %}
+                {% assign index = forloop.index0 %}
+                <div class="slide" id="slide_{{index}}">
+                    <figure>
+                        <a href="{{picture | absolute_url}}" ref="lightbox">
+                            <img src="{{picture | absolute_url}}" alt="{{page.name}} painting" />
+                        </a>
+                    </figure>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="gallery-nav">
+            {% for picture in page.gallery %}
+                {% assign index = forloop.index0 %}
+                <label for="#slide_{{index}}" onClick="moveToSlide(`{{index}}`, this)" class="{% if index == 0 %}active{% endif %}"></label>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="project-overview">
+        <!-- <strong class="section-title">Overview</strong> -->
+        <h1 class="project-title">{{page.name}}</h1>
+        <div class="project-description">{{content}}</div>
+    </div>
+    <div class="project-meta">
+        <div>
+            <div>
+                <strong class="section-title">Date</strong>
+                <time>{{page.creationDate | date_to_string}}</time>
+            </div>
+            <div>
+                <strong class="section-title">Size</strong>
+                <span>{{page.size}}</span>
+            </div>
+            <div>
+                <strong class="section-title">Medium</strong>
+                <span>{{page.medium}}</span>
+            </div>
+            <div>
+                
+                <strong class="section-title">Client</strong>
+                <span>{{page.client}}</span>
+               
+            </div>
+            <a href="{{page.website}}" class="button" target="_blank">View Project</a>
+            
+        </div>
+    </div>
+</section>

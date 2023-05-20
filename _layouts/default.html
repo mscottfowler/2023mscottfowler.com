@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="author" content="{{page.author}}" />
+        <meta name="copyright" content="Copyright by {{site.title}}. All Rights Reserved." />
+
+        <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+        <meta name="description" property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+        <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+        {% if page.description %}
+            <meta name="description" content="{{page.description | markdownify | strip_html | strip | strip_newlines | truncate: 200}}" />
+        {% else %}
+            <meta name="description" content="{{site.title}} &mdash; {{site.description}}" />
+        {% endif %}
+
+        {% feed_meta %}   
+
+        {% include meta.html %}
+
+        <title>{% if page.title %}{{page.title | escape}} |{% endif %} {{site.title | escape}} {% if site.description %}&mdash; {{site.description | escape }} {% endif %}</title>
+
+        {% if site.showFavIcon %}
+            <link rel="icon" type="image/svg+xml" href={{"/assets/images/favicon.svg" | absolute_url}}>
+        {% endif %}
+
+        {% include fonts.html %}
+        
+        <link rel="stylesheet" href={{"/assets/css/styles.css" | absolute_url}}>
+    </head>
+    <body>
+        <!-- {% if site.darkMode %}
+            {% include partials/themeChanger.html %}
+        {% endif %} -->
+
+        <!-- {% include partials/burgerMenu.html %} -->
+
+        {% include layout/header.html %}
+
+        {% include layout/navigation.html %}
+
+        {% include partials/headerSeparator.html %}
+
+        <!-- {% if site.showSearch %}
+            {% include components/siteSearch.html %}
+        {% endif %} -->
+
+        <main class="{% if page.layout == 'blog' or page.layout == 'post' or page.layout == 'category' or page.layout == 'tag' %}wrapper{% else %}wrapper long{% endif %}" role="main">
+            {{content}}
+        </main>
+
+        {% include layout/footer.html %}
+
+        {% if site.useExternalContactForm %}
+            {% include components/contactForm.html %}
+        {% endif %}
+
+        {% if page.layout == 'project' %}
+            {% include components/lightbox.html %}
+        {% endif %}
+
+        {% if site.showCookieBanner %}
+            {% include components/cookieBanner.html %}
+        {% endif %}
+
+        {% include scripts.html %}
+    </body>
+</html>

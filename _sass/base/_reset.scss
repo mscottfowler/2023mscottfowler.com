@@ -1,0 +1,7 @@
+* { box-sizing: border-box; -moz-box-sizing: border-box; }
+body { margin: 0; padding: 0; font-family: 'PT Serif', serif; font-size: 18px; line-height: 30px; color: var(--grey-555); background: var(--body-bg); }
+header, nav, section, main, article, aside, figure, footer, iframe, object, svg { display: block; margin: 0; }
+
+@media screen and (max-width: 800px) {
+    body { padding: 80px 0 0; }
+}

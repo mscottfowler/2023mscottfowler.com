@@ -1,0 +1,137 @@
+.post-lists-title { font-family: 'PT Sans', sans-serif; font-size: 24px; line-height: 42px; font-weight: 700; color: var(--grey-aaa); margin: 0 0 40px; text-align: center;
+    span { color: var(--grey-222); }
+}
+
+.post-list { display: grid; gap: 100px 0; }
+
+.post { position: relative;
+    .post-title { margin: 0 0 25px; font-family: 'PT Sans', sans-serif; font-size: 32px; line-height: 42px; font-weight: 700; color: var(--grey-222);
+        a { color: var(--grey-222); text-decoration: none;
+            &:hover { text-decoration: underline; }
+        }
+    }
+    .post-author { position: absolute; top: 10px; left: -200px; width: 150px; text-align: right;
+        .author-avatar { display: inline-block; width: 50px; height: 50px; border-radius: 50%; fill: currentColor; color: var(--grey-ddd); }
+        .author-info {
+            .author-name { display: block; margin: 10px 0 4px; font-family: 'PT Sans', sans-serif; font-size: 16px; line-height: 20px; font-weight: 700; color: var(--grey-222); text-transform: uppercase; }
+            .author-title { display: block; font-size: 12px; line-height: 16px; font-style: italic; color: var(--grey-9a); }
+        }
+
+        .post-meta { position: relative; margin: 15px 0 0; padding: 15px 0 0; line-height: 20px; font-size: 14px; color: var(--grey-9a);
+            &:before { position: absolute; top: 0; right: 0; width: 30px; height: 1px; background: var(--grey-ddd); content: ""; }
+
+            .post-date { position: relative; margin: 0 5px 0 0; padding: 0 10px 0 0;
+                &:after { position: absolute; top: 50%; right: 0; width: 3px; height: 3px; border-radius: 50%; background: var(--grey-ccc); content: ""; }
+            }
+            .post-categories { position: relative; @include flexbox(); @include justify-content(flex-end); gap: 5px; margin: 8px 0 0;
+                a { color: var(--main-color); text-decoration: none;
+                    &:hover { text-decoration: underline; }
+                }
+            }
+        }
+    }
+    .post-content {
+        abbr { border-bottom: 1px dotted var(--grey-555); text-decoration: none; cursor: help; }
+        code, kbd, pre { margin: 0; font-family: monospace; word-wrap: break-word; word-break: break-word; white-space: pre-wrap; }
+        address, cite, var { font-style: italic; }
+        blockquote { margin: 40px 0; padding: 0 0 0 20px; border-left: 3px solid var(--grey-555); color: var(--grey-222); font-weight: 700; }
+        em, strong { color: var(--grey-222); }
+
+        h1, h2, h3, h4, h5, h6 { font-family: 'PT Sans', sans-serif; margin: 40px 0 25px 0; color: var(--grey-222); }
+        h4, h5, h6 { margin: 25px 0; }
+        h1 { font-size: 28px; }
+        h2 { font-size: 26px; }
+        h3 { font-size: 22px; }
+        h4 { font-size: 20px; }
+        h5 { font-size: 18px; }
+        h6 { font-size: 16px; }
+
+        a { color: var(--main-color);
+            font-weight:bold;
+            &:hover { text-decoration: underline; }
+        }
+
+        img { display: block; max-width: 100%; height: auto; }
+
+        ul { list-style-type: disc; list-style-position: inside; }
+
+        ul, ol { margin: 15px 0; padding: 0 0 0 20px;
+            ul, ol { padding: 0 0 0 20px; }
+            li { margin: 5px 0;
+                & > code { font-size: 14px; padding: 3px 6px; margin: 0 4px; background: var(--grey-fa); border: 1px solid var(--grey-ccc); }
+            }
+        }
+
+        dl { margin: 40px 0;
+            dt { margin: 10px 0 0; font-weight: 700; }
+            dd { margin: 5px 0;
+                & > code { font-size: 14px; padding: 3px 6px; margin: 0 4px; background: var(--grey-fa); border: 1px solid var(--grey-ccc); }
+            }
+        }
+        
+        p { margin: 15px 0;
+            & > code { font-size: 14px; padding: 3px 6px; margin: 0 4px; background: var(--grey-fa); border: 1px solid var(--grey-ccc); }
+        }
+
+        .alignleft { float: left; margin: 20px 30px 10px 0; }
+        .alignright { float: right; margin: 20px 0 10px 20px; }
+        .aligncenter { clear: both; margin: 0 auto 20px; }
+
+        figcaption { font-size: 13px; font-style: italic; padding-top: 10px; }
+
+        .iframe-wrapper { position: relative; padding-top: 56.25%;
+            & > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        }
+
+        .read-more-button { font-size: 16px; color: var(--grey-555); }
+    }
+
+    .post-footer { @include flexbox(); @include justify-content(space-between); @include align-items(flex-start); gap: 0 20px; margin: 50px 0 0;
+        .post-tags { @include flexbox(); @include flex-flow(row wrap); @include flex(9, 1, auto); gap: 0 20px; list-style: none; margin: 0; padding: 0;
+            li {
+                a { font-size: 14px; font-family: 'PT Sans', sans-serif; color: var(--grey-ccc); text-decoration: none; @include transition(all .15s ease);
+                    &:hover { color: var(--grey-555); }
+                }
+            }
+        }
+        .post-share { position: relative; @include flex(0, 0, auto); border: 1px solid var(--grey-ddd); overflow: hidden; 
+            &:hover {
+                & > span { margin-left: -100%; }
+                & > ul { left: 0; }
+            }
+            span { display: block; width: 100%; padding: 0 15px; font-family: 'PT Sans', sans-serif; font-size: 12px; text-transform: uppercase; text-align: center; letter-spacing: .1em; color: var(--grey-aaa); cursor: pointer; @include transition(margin .2s ease); }
+            ul { position: absolute; top: 0; left: 100%; width: 100%; height: 100%; @include flexbox(); list-style: none; margin: 0; padding: 0;  @include transition(left .2s ease);
+                li { @include flex(1, 0, auto); cursor: pointer;
+                    &:last-child { border-left: 1px solid var(--grey-ddd); }
+                    a { @include flexbox(); @include align-items(); @include justify-content(); height: 100%; color: var(--grey-ccc);
+                        &:hover { background: var(--grey-eee); }
+                        svg { fill: currentColor; }
+                    }
+                }
+            }
+        }
+    }
+    
+    .post-comments { position: relative; margin: 40px 0 0; padding: 20px 0 0; border-top: 1px solid var(--grey-ddd); }
+    img[alt=idxf] { width: 200px; }
+}
+
+
+@media screen and (max-width: 960px) {
+    .post { 
+        .post-title { margin: 0 0 15px; }
+        .post-author { @include flexbox(); @include align-items(); @include flex-flow(row wrap); gap: 15px; position: static; width: 100%; margin: 0 0 20px; text-align: left;
+            .author-avatar { width: 36px; height: 36px; }
+            .author-info {
+                .author-name { margin: 0; color: var(--grey-555); text-transform: initial; }
+                .author-title { display: none; }
+            }
+            .post-meta { @include flexbox(); @include flex-flow(row wrap); margin: 0; margin-left: auto; padding: 0;
+                &:before { content: none; }
+                .post-categories { margin: 0 0 0 5px; padding: 0 0 0 10px;
+                    &:before { position: absolute; top: 50%; left: 0; width: 3px; height: 3px; border-radius: 50%; background: var(--grey-ccc); content: ""; }
+                }
+            }
+        }
+    }
+}

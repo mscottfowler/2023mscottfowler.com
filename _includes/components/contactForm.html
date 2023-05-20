@@ -1,0 +1,23 @@
+<div class="modal-container">
+    <div class="modal">
+        <div class="modal-header">
+            <strong class="modal-title">Contact Me</strong>
+            <svg class="close-modal" width="50" height="50"><use href={{"/assets/images/other-icons.svg#close" | absolute_url}}></use></svg>
+        </div>
+        <div class="modal-body">
+            <p id="contact-form-message" class="form-message"></p>
+            <form id="contact-form" action="{{site.formspree}}" method="POST" role="form">
+                <label for="contact-name">
+                    <input type="text" placeholder="Your Name" name="name" id="contact-name" class="input">
+                </label>
+                <label for="contact-email">
+                    <input type="email" placeholder="Your Email" name="_replyto" id="contact-email" class="input">
+                </label>
+                <label for="contact-message">
+                    <textarea placeholder="Message" name="message" id="contact-message" class="textarea"></textarea>
+                </label>
+                <button type="submit" id="submit-contact-form" class="button">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<script src={{"/assets/js/simple-jekyll-search.min.js" | absolute_url}}></script>
+<script src={{"/assets/js/theme-changer.js" | absolute_url}}></script>
+
+{% if site.showCookieBanner %}
+<script src={{"/assets/js/cookie-banner.js" | absolute_url}}></script>
+{% endif %}
+
+{% if page.layout == "project" %}
+<script src={{"/assets/js/carousel.js" | absolute_url}}></script>
+<script src={{"/assets/js/lightbox.js" | absolute_url}}></script>
+{% endif %}
+
+{% if site.useExternalContactForm %}
+<script src={{"/assets/js/contact-form.js" | absolute_url}}></script>
+{% endif %}
+
+{% if page.layout == "post" %}
+<script src={{"/assets/js/reading-progress-bar.js" | absolute_url}}></script>
+{% endif %}
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('site-search-input'),
+        resultsContainer: document.getElementById('site-search-results-container'),
+        json: '{{site.url}}/search.json',
+        searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+        noResultsText: '<div class="no-results">No results found.</div>',
+    })
+</script>
+
+{% if site.useAnalytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{site.googleAnalyticsTrackingCode}}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{site.googleAnalyticsTrackingCode}}');
+    </script>
+{% endif %}

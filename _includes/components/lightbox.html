@@ -1,0 +1,10 @@
+<div id="custom-lightbox" class="custom-lightbox">
+    <div class="lightbox-content">
+        <div  onClick="prevImage()" class="prev-image"><svg width="32" height="32"><use href={{"/assets/images/other-icons.svg#arrow-right" | absolute_url}}></use></svg></div>
+        <div class="current-image">
+            <img id="current-image" src="" alt="Gallery" width="400" height="300" />
+        </div>
+        <div  onClick="nextImage()" class="next-image"><svg width="32" height="32"><use href={{"/assets/images/other-icons.svg#arrow-right" | absolute_url}}></use></svg></div>
+    </div>
+    <button class="lightbox-close" onClick="closeLightbox()"><svg width="32" height="32"><use href={{"/assets/images/other-icons.svg#close" | absolute_url}}></use></svg></button>
+</div>

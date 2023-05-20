@@ -1,0 +1,12 @@
+henry:
+  name: Henry Dawson
+  title: Ordinary Gentleman
+  avatar: /assets/images/user1.webp
+guest:
+  name: Guest Star
+  title: Guest Author
+  avatar: /assets/images/user2.webp
+scott:
+  name: Scott Fowler
+  title: Local Leader,<br>IxDF NW Arkansas<br>UX Designer<br>Fine Artist
+  avatar: /assets/images/thumbs/scott-fowler-thumb.jpg

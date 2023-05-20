@@ -1,0 +1,95 @@
+@mixin transition($transitions...) {
+    transition: $transitions;
+    -moz-transition: $transitions;
+    -webkit-transition: $transitions;
+    -o-transition: $transitions;
+}
+
+@mixin no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@mixin placeholder {
+    &.placeholder { @content }
+    &:-ms-input-placeholder { @content }
+    &:-moz-placeholder { @content }
+    &::-moz-placeholder { @content }
+    &::-webkit-input-placeholder { @content }
+}
+
+@mixin translate($val1, $val2) {
+	-webkit-transform: translate(#{$val1}, #{$val2});
+	-moz-transform: translate(#{$val1}, #{$val2});
+	-ms-transform: translate(#{$val1}, #{$val2});
+	-o-transform: translate(#{$val1}, #{$val2});
+	transform: translate(#{$val1}, #{$val2});
+}
+
+@mixin skew($x, $y) {
+    -webkit-transform: skew(#{$x}, #{$y});
+    -moz-transform: skew(#{$x}, #{$y});
+    -ms-transform: skew(#{$x}, #{$y});
+    -o-transform: skew(#{$x}, #{$y});
+    transform: skew(#{$x}, #{$y});
+}
+
+@mixin scale($val) {
+    -webkit-transform: scale(#{$val});
+    -moz-transform: scale(#{$val});
+    -ms-transform: scale(#{$val});
+    -o-transform: scale(#{$val});
+    transform: scale(#{$val});
+}
+
+@mixin rotate($deg) {
+	-webkit-transform: rotate(#{$deg});
+	-moz-transform: rotate(#{$deg});
+	-ms-transform: rotate(#{$deg});
+	-o-transform: rotate(#{$deg});
+	transform: rotate(#{$deg});
+}
+
+@mixin flexbox() {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin inline-flex() {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+@mixin flex($grow: 1, $shrink: 1, $basis: auto) {
+    -webkit-flex: $grow $shrink $basis;
+    -moz-flex: $grow $shrink $basis;
+    -ms-flex: $grow $shrink $basis;
+    flex: $grow $shrink $basis;
+}
+
+@mixin flex-flow($values: (row wrap)) {
+	-webkit-flex-flow: $values;
+	-moz-flex-flow: $values;
+	-ms-flex-flow: $values;
+	flex-flow: $values;
+}
+
+@mixin justify-content($pos: center) {
+	-webkit-justify-content: $pos;
+	justify-content: $pos;
+}
+
+@mixin align-items($align: center) {
+	-webkit-align-items: $align;
+	align-items: $align;
+}
