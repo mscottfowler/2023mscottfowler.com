@@ -23,4 +23,4 @@ Date/Time
 : June 8, 2023/6-8pm
 
 Get FREE Tickets
-: [Sign up at Eventbrite](https://www.eventbrite.com/e/ixdf-nw-arkansas-june-2023-meet-up-tickets-640146614757)
+: <button type="button" class="btn btn-primary btn-lg" name="button" onclick="https://www.eventbrite.com/e/ixdf-nw-arkansas-june-2023-meet-up-tickets-640146614757">Eventbrite</button>
