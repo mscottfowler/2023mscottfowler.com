@@ -10,11 +10,11 @@ comments: true
     <img src="{{ '/assets/images/posts/ixdf-june-shire-01.jpg' | relative_url }}" alt="The Shire Gastropub in Downtown Rogers"/>
 </figure>
     
-Hi IxDF NW Arkansas, let’s meet up, share UX design insights and resources, discuss UX problems you are facing now, or just chat.
+Hi IxDF NW Arkansas, let’s meet up at [The Shire Gastropub](https://www.theshirenwa.com/), share UX design insights and resources, discuss UX problems you are facing now, or just chat.
 Maybe do a little bit of karaoke this time? Maybe I'll do some Barry Manilow for everyone. "Her name was Lola, she was a showgirl." LOL.
 
 Location
-: Aloft Rogers
+: [The Shire Gastropub](https://www.theshirenwa.com/) in downtown Rogers
 
 Address
 : 117 West Walnut St, Rogers, Arkansas, US, 72756
