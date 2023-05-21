@@ -11,6 +11,7 @@ comments: true
 </figure>
     
 Hi IxDF NW Arkansas, let’s meet up, share UX design insights and resources, discuss UX problems you are facing now, or just chat.
+Maybe do a little bit of karaoke this time? Maybe I'll do some Barry Manilow for everyone. "Her name was Lola, she was a showgirl." LOL.
 
 Location
 : Aloft Rogers
