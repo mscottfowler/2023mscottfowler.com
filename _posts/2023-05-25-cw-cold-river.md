@@ -14,6 +14,7 @@ comments: true
 #### I do a bit of creative writing from time to time. Here's my latest attempt. This is called *Cold, Cold River*!
     
 The man sat in the front porch rocker fidgeting, waiting for the woman to drown. The chair protested with loud, agonizing creaks as it listed back and forth. His boots marked time on the wooden floor like a metronome. Time seemed to stand still.
+<!--more-->
 
 The urgent orchestra of cicadas eclipsed the woman’s frantic splashing. They shouted their late summer evening concerto for the whole world to hear. The ebb and flow of their resonance reminded him of movies like War of the Worlds. Sinister alien armies coming to infest Earth by draining the masses to a bloody pulp. No matter — out here at the cabin on the lake — no one would hear her struggle.
 
