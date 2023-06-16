@@ -452,7 +452,7 @@ button,
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button; // 2
-
+appearance: button;
   @if $enable-button-pointers {
     &:not(:disabled) {
       cursor: pointer; // 3
@@ -531,7 +531,8 @@ legend {
 
 [type="search"] {
   outline-offset: -2px; // 1
-  -webkit-appearance: textfield; // 2
+  -webkit-appearance: textfield;
+  appearance: textfield; // 2
 }
 
 // 1. A few input types should stay LTR
@@ -566,7 +567,8 @@ legend {
 
 ::file-selector-button {
   font: inherit; // 1
-  -webkit-appearance: button; // 2
+  -webkit-appearance: button; 
+  appearance: button;// 2
 }
 
 // Correct element displays
